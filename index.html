@@ -413,6 +413,7 @@ footer {
   section { padding: 4rem 1.5rem; }
   .dores-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
+  .step { border-bottom: 2px solid var(--ink); }
   .pkg-grid { grid-template-columns: 1fr; }
   .pkg-card.featured { margin: -2px; }
   .diag-section { grid-template-columns: 1fr; }
@@ -423,6 +424,10 @@ footer {
   .roi-card { border-right: none; border-bottom: 1px solid #1e3328; }
   .cta-final { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
   footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+}
+@media (max-width: 560px) {
+  .steps { grid-template-columns: 1fr; }
+  .step { border-right: none; }
 }
 </style>
 </head>
@@ -572,7 +577,7 @@ footer {
       <span class="dor-num">05</span>
       <span class="dor-icon">😰</span>
       <div class="dor-title">Reunião sem dados na ponta da língua</div>
-      <div class="dor-body">Quando o cliente liga perguntando sobre performance, você precisa correr para montar um número. A confiança vai junto.</div>
+      <div class="dor-body">Quando o cliente pergunta sobre performance você precisa correr para montar um número. Confiança vai junto.</div>
     </div>
     <div class="dor-card fade-in" style="transition-delay:.1s">
       <span class="dor-num">06</span>
