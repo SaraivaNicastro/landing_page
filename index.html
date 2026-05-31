@@ -255,8 +255,10 @@ section { padding: 6rem 3rem; }
 
 /* PACOTES */
 .pacotes { background: var(--bg); }
-.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 3rem; border: 2px solid var(--ink); }
+.pkg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 3rem; border: 2px solid var(--ink); max-width: 100%; }
 .pkg-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 2.5rem; border-right: 2px solid var(--ink);
   display: flex; flex-direction: column; position: relative; transition: background .25s;
 }
@@ -414,8 +416,10 @@ footer {
   .dores-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .step { border-bottom: 2px solid var(--ink); }
-  .pkg-grid { grid-template-columns: 1fr; }
-  .pkg-card.featured { margin: -2px; }
+  .pkg-grid { grid-template-columns: 1fr !important; width: 100%; }
+  .pkg-card { border-right: none; border-bottom: 2px solid var(--ink); }
+  .pkg-card:last-child { border-bottom: none; }
+  .pkg-card.featured { margin: 0; border-left: none; border-right: none; }
   .diag-section { grid-template-columns: 1fr; }
   .diag-left { border-right: none; border-bottom: 1px solid #1e3328; padding: 3rem 1.5rem; }
   .diag-right { padding: 3rem 1.5rem; }
@@ -428,6 +432,9 @@ footer {
 @media (max-width: 560px) {
   .steps { grid-template-columns: 1fr; }
   .step { border-right: none; }
+  .pkg-card { padding: 2rem 1.25rem; }
+  .pkg-price { font-size: 1.55rem; }
+  .pkg-name { font-size: 1.18rem; }
 }
 </style>
 </head>
@@ -616,7 +623,7 @@ footer {
   <div class="sec-eyebrow">Projetos mais comuns</div>
   <h2 class="sec-title fade-in">Cada operação tem um <em>ponto de partida</em></h2>
   <p class="sec-sub fade-in" style="transition-delay:.1s">Cada operação possui um nível diferente de maturidade de dados e processos. Por isso os projetos são desenhados de acordo com a realidade atual do time — desde organização operacional até automações mais avançadas.</p>
-  <div class="pkg-grid fade-in" style="transition-delay:.15s;grid-template-columns:1fr 1fr 1fr">
+  <div class="pkg-grid fade-in" style="transition-delay:.15s">
 
     <div class="pkg-card">
       <span class="pkg-num">Projeto 01 — Operacional</span>
@@ -644,6 +651,7 @@ footer {
       <div class="pkg-divider"></div>
       <ul class="pkg-items">
         <li>Automação de aprovações e checklists</li>
+        <li>Organização de onboarding de clientes</li>
         <li>Monitoramento operacional entre plataformas</li>
         <li>Fluxos automáticos para tarefas recorrentes</li>
         <li>Centralização de processos internos</li>
