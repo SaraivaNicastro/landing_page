@@ -436,6 +436,140 @@ footer {
   .pkg-price { font-size: 1.55rem; }
   .pkg-name { font-size: 1.18rem; }
 }
+
+/* PROJETOS — nova seção de cards */
+.sec-projetos {
+  padding: 6rem 3rem;
+  background: var(--bg);
+}
+.sec-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--em); margin-bottom: 14px;
+  display: flex; align-items: center; gap: .75rem;
+}
+.sec-label::before { content: ''; width: 1.5rem; height: 2px; background: var(--em); }
+.sec-projetos .sec-title { margin-bottom: 12px; }
+.sec-desc {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem; color: var(--muted);
+  line-height: 1.7; max-width: 640px; margin-bottom: 16px;
+}
+.nota-nivel {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--dark); color: #7aaa8e;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px; padding: 8px 16px;
+  border-radius: 6px; margin-bottom: 56px;
+}
+.nota-nivel span { color: #c8d8cc; font-weight: 500; }
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 24px;
+}
+.projeto-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: box-shadow .2s, transform .2s;
+}
+.projeto-card:hover {
+  box-shadow: 0 8px 32px rgba(22,18,16,.08);
+  transform: translateY(-2px);
+}
+.card-header { background: var(--dark); padding: 24px 28px 20px; }
+.card-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; font-weight: 500; color: #7aaa8e;
+  letter-spacing: .1em; margin-bottom: 8px;
+}
+.card-titulo {
+  font-family: 'Outfit', sans-serif; font-weight: 700;
+  font-size: 1.3rem; color: #e8f0eb; line-height: 1.25; margin-bottom: 10px;
+}
+.card-preco { display: flex; align-items: baseline; gap: 6px; }
+.preco-valor {
+  font-family: 'Outfit', sans-serif; font-weight: 800;
+  font-size: 1.5rem; color: var(--em);
+}
+.preco-nota { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7aaa8e; }
+.badge-infra {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+  color: var(--amber); background: rgba(217,119,6,.08);
+  border: 1px solid rgba(217,119,6,.25);
+  padding: 3px 8px; border-radius: 4px; margin-top: 4px;
+}
+.card-body {
+  padding: 24px 28px; flex: 1;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.para-voce {
+  background: #f0ece3; border-left: 3px solid var(--em);
+  border-radius: 0 6px 6px 0; padding: 12px 16px;
+}
+.para-voce-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--em-dark); margin-bottom: 5px;
+}
+.para-voce-texto {
+  font-family: 'Lora', serif; font-size: .9rem;
+  color: var(--ink); line-height: 1.5;
+}
+.entregaveis {
+  list-style: none; display: flex; flex-direction: column; gap: 8px;
+}
+.entregaveis li {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-family: 'Lora', serif; font-size: .88rem;
+  color: #3d3529; line-height: 1.45;
+}
+.entregaveis li::before {
+  content: ''; width: 6px; height: 6px; min-width: 6px;
+  border-radius: 50%; background: var(--em); margin-top: 7px;
+}
+.card-descricao {
+  font-family: 'Lora', serif; font-size: .875rem;
+  color: var(--muted); line-height: 1.65; font-style: italic;
+  border-top: 1px solid var(--border); padding-top: 16px;
+}
+.card-cta { padding: 20px 28px; border-top: 1px solid var(--border); }
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--em); color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none; padding: 11px 20px;
+  border-radius: 6px; transition: background .15s;
+  width: 100%; justify-content: center;
+}
+.btn-cta:hover { background: var(--em-dark); }
+
+/* PROJETOS — responsivo mobile */
+@media (max-width: 700px) {
+  .sec-projetos { padding: 56px 16px; }
+  .sec-desc { font-size: .95rem; }
+  .nota-nivel {
+    display: flex; flex-wrap: wrap; width: 100%;
+    font-size: 11px; padding: 10px 14px; gap: 4px; margin-bottom: 40px;
+  }
+  .card-header { padding: 20px 18px 16px; }
+  .card-body   { padding: 18px 18px; }
+  .card-cta    { padding: 16px 18px; }
+  .preco-valor { font-size: 1.3rem; }
+  .card-titulo { font-size: 1.15rem; }
+}
+@media (max-width: 360px) {
+  .sec-projetos { padding: 48px 12px; }
+  .card-header  { padding: 18px 14px 14px; }
+  .card-body    { padding: 16px 14px; }
+  .card-cta     { padding: 14px 14px; }
+  .btn-cta      { font-size: 12px; padding: 10px 14px; }
+}
+
 </style>
 </head>
 <body>
@@ -619,63 +753,136 @@ footer {
 </section>
 
 <!-- PROJETOS -->
-<section class="pacotes" id="pacotes">
-  <div class="sec-eyebrow">Projetos mais comuns</div>
-  <h2 class="sec-title fade-in">Cada operação tem um <em>ponto de partida</em></h2>
-  <p class="sec-sub fade-in" style="transition-delay:.1s">Cada operação possui um nível diferente de maturidade de dados e processos. Por isso os projetos são desenhados de acordo com a realidade atual do time — desde organização operacional até automações mais avançadas.</p>
-  <div class="pkg-grid fade-in" style="transition-delay:.15s">
+<section class="sec-projetos" id="pacotes">
 
-    <div class="pkg-card">
-      <span class="pkg-num">Projeto 01 — Operacional</span>
-      <div class="pkg-name">Automação & visibilidade operacional</div>
-      <div class="pkg-price">a partir de R$ 3k</div>
-      <div class="pkg-price-note">por projeto · escopo definido no diagnóstico</div>
-      <div class="pkg-divider"></div>
-      <ul class="pkg-items">
-        <li>Consolidação automática de relatórios de múltiplas plataformas</li>
-        <li>Alertas de pacing e orçamento no Slack ou WhatsApp</li>
-        <li>Dashboard com atualização automática e acompanhamento em tempo real</li>
-        <li>Validação de campanhas, naming e UTMs</li>
-        <li>Padronização de processos operacionais</li>
-      </ul>
-    </br>
-      <p style="font-size:.78rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-bottom:1.5rem;line-height:1.5">Para times que querem parar de fazer manualmente o que pode rodar sozinho — e ter clareza sobre o que está acontecendo nas campanhas sem precisar montar planilha.</p>
-      <a href="https://wa.me/5511993642061?text=Olá%2C%20tenho%20interesse%20no%20Projeto%2001%20—%20Automação%20%26%20visibilidade%20operacional.%20Gostaria%20de%20saber%20mais%20e%20agendar%20uma%20conversa." class="pkg-cta pkg-cta-outline" target="_blank" rel="noopener noreferrer">Explorar esse projeto →</a>
+  <p class="sec-label">Projetos mais comuns</p>
+  <h2 class="sec-title">Cada operação tem um <em>ponto de partida</em></h2>
+  <p class="sec-desc">
+    Os projetos não são fases obrigatórias de uma escada. São pontos de entrada diferentes, dependendo de onde sua operação está hoje. O diagnóstico define qual faz mais sentido para o seu momento.
+  </p>
+
+  <div class="nota-nivel">
+    <span>→</span> Você não precisa começar pelo 01 para chegar ao 03. <span>O diagnóstico define o caminho.</span>
+  </div>
+
+  <div class="projetos-grid">
+
+    <!-- PROJETO 01 -->
+    <div class="projeto-card">
+      <div class="card-header">
+        <p class="card-num">Projeto 01 — Operacional</p>
+        <h3 class="card-titulo">Automação &amp; visibilidade operacional</h3>
+        <div class="card-preco">
+          <span class="preco-valor">a partir de R$ 3k</span>
+          <span class="preco-nota">por projeto</span>
+        </div>
+      </div>
+
+      <div class="card-body">
+
+        <div class="para-voce">
+          <p class="para-voce-label">Para você se...</p>
+          <p class="para-voce-texto">Seu time ainda monta relatório na mão — e perde horas toda semana em tarefas que poderiam rodar sozinhas.</p>
+        </div>
+
+        <ul class="entregaveis">
+          <li>Consolidação automática de relatórios de múltiplas plataformas</li>
+          <li>Alertas de pacing e orçamento no Slack ou WhatsApp</li>
+          <li>Dashboard com atualização automática e acompanhamento em tempo real</li>
+          <li>Validação de campanhas, naming e UTMs</li>
+          <li>Padronização de processos operacionais</li>
+        </ul>
+
+        <p class="card-descricao">
+          Para times que querem parar de fazer manualmente o que pode rodar sozinho — e ter clareza sobre o que está acontecendo nas campanhas sem precisar montar planilha.
+        </p>
+
+      </div>
+
+      <div class="card-cta">
+        <a class="btn-cta" href="https://wa.me/5511993642061?text=Olá%2C%20tenho%20interesse%20no%20Projeto%2001%20—%20Automação%20%26%20visibilidade%20operacional.%20Gostaria%20de%20saber%20mais%20e%20agendar%20uma%20conversa." target="_blank">
+          Explorar esse projeto →
+        </a>
+      </div>
     </div>
 
-    <div class="pkg-card featured">
-      <span class="pkg-num">Projeto 02 — Escala</span>
-      <div class="pkg-name">Escala sem contratar mais</div>
-      <div class="pkg-price">a partir de R$ 8k</div>
-      <div class="pkg-price-note">por projeto · desenhado para a sua operação</div>
-      <div class="pkg-divider"></div>
-      <ul class="pkg-items">
-        <li>Automação de aprovações e checklists</li>
-        <li>Organização de onboarding de clientes</li>
-        <li>Monitoramento operacional entre plataformas</li>
-        <li>Fluxos automáticos para tarefas recorrentes</li>
-        <li>Centralização de processos internos</li>
-      </ul>
-      <p style="font-size:.78rem;color:rgba(255,255,255,.6);font-family:'IBM Plex Mono',monospace;margin-bottom:1.5rem;line-height:1.5">Para operações que precisam organizar processos e reduzir dependência manual conforme o time cresce.</p>
-      <a href="https://wa.me/5511993642061?text=Olá%2C%20tenho%20interesse%20no%20Projeto%2002%20—%20Escala%20sem%20contratar%20mais.%20Gostaria%20de%20entender%20as%20possibilidades." class="pkg-cta pkg-cta-fill" target="_blank" rel="noopener noreferrer">Entender possibilidades →</a>
+    <!-- PROJETO 02 -->
+    <div class="projeto-card">
+      <div class="card-header">
+        <p class="card-num">Projeto 02 — Escala</p>
+        <h3 class="card-titulo">Escala sem contratar mais</h3>
+        <div class="card-preco">
+          <span class="preco-valor">a partir de R$ 8k</span>
+          <span class="preco-nota">por projeto</span>
+        </div>
+      </div>
+
+      <div class="card-body">
+
+        <div class="para-voce">
+          <p class="para-voce-label">Para você se...</p>
+          <p class="para-voce-texto">Você já tem relatórios e dados, mas o processo interno ainda trava o crescimento — aprovações demoram, onboarding é inconsistente, o time não escala.</p>
+        </div>
+
+        <ul class="entregaveis">
+          <li>Automação de aprovações e checklists</li>
+          <li>Organização e padronização de onboarding de clientes</li>
+          <li>Monitoramento operacional entre plataformas</li>
+          <li>Fluxos automáticos para tarefas recorrentes</li>
+          <li>Centralização de processos internos</li>
+        </ul>
+
+        <p class="card-descricao">
+          Para operações que precisam organizar processos e reduzir dependência manual conforme o time cresce.
+        </p>
+
+      </div>
+
+      <div class="card-cta">
+        <a class="btn-cta" href="https://wa.me/5511993642061?text=Olá%2C%20tenho%20interesse%20no%20Projeto%2002%20—%20Escala%20sem%20contratar%20mais.%20Gostaria%20de%20entender%20as%20possibilidades." target="_blank">
+          Entender possibilidades →
+        </a>
+      </div>
     </div>
 
-    <div class="pkg-card">
-      <span class="pkg-num">Projeto 03 — IA Avançada</span>
-      <div class="pkg-name">Agentes & inteligência contextual</div>
-      <div class="pkg-price">a partir de R$ 11k</div>
-      <div class="pkg-price-note">por projeto · infra paga pelo cliente</div>
-      <div class="pkg-divider"></div>
-      <ul class="pkg-items">
-        <li>Agentes de IA com memória e raciocínio sobre dados da sua operação</li>
-        <li>RAG sobre histórico de campanhas, relatórios e bases internas</li>
-        <li>Multi-agentes para análise cross-plataforma com output estruturado</li>
-        <li>Assistente interno treinado nos processos e contexto da agência</li>
-        <li>Insights gerados automaticamente sem depender de analista</li>
-      </ul>
-    </br>
-      <p style="font-size:.78rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-bottom:1.5rem;line-height:1.5">Para operações que querem ir além da automação e colocar IA de verdade em produção: agentes que entendem o contexto, consultam bases históricas e entregam análises sem precisar de prompt manual.</p>
-      <a href="https://wa.me/5511993642061?text=Olá%2C%20tenho%20interesse%20no%20Projeto%2003%20—%20Agentes%20%26%20inteligência%20contextual.%20Gostaria%20de%20entender%20as%20possibilidades." class="pkg-cta pkg-cta-outline" target="_blank" rel="noopener noreferrer">Explorar esse projeto →</a>
+    <!-- PROJETO 03 -->
+    <div class="projeto-card">
+      <div class="card-header">
+        <p class="card-num">Projeto 03 — IA Avançada</p>
+        <h3 class="card-titulo">Agentes &amp; inteligência contextual</h3>
+        <div class="card-preco">
+          <span class="preco-valor">a partir de R$ 11k</span>
+          <span class="preco-nota">por projeto</span>
+        </div>
+        <div class="badge-infra">⚡ infra paga pelo cliente</div>
+      </div>
+
+      <div class="card-body">
+
+        <div class="para-voce">
+          <p class="para-voce-label">Para você se...</p>
+          <p class="para-voce-texto">Você quer que a IA raciocine sobre sua operação — não só automatize tarefas, mas entenda contexto, consulte histórico e entregue análises sem precisar de prompt manual.</p>
+        </div>
+
+        <ul class="entregaveis">
+          <li>Agentes de IA com memória e raciocínio sobre dados da operação</li>
+          <li>RAG sobre histórico de campanhas, relatórios e bases internas</li>
+          <li>Multi-agentes para análise cross-plataforma com output estruturado</li>
+          <li>Assistente interno treinado nos processos e contexto da agência</li>
+          <li>Insights gerados automaticamente sem depender de analista</li>
+        </ul>
+
+        <p class="card-descricao">
+          Para operações que querem ir além da automação e colocar IA de verdade em produção: agentes que entendem o contexto e entregam análises sem intervenção manual.
+        </p>
+
+      </div>
+
+      <div class="card-cta">
+        <a class="btn-cta" href="https://wa.me/5511993642061?text=Olá%2C%20tenho%20interesse%20no%20Projeto%2003%20—%20Agentes%20%26%20inteligência%20contextual.%20Gostaria%20de%20entender%20as%20possibilidades." target="_blank">
+          Explorar esse projeto →
+        </a>
+      </div>
     </div>
 
   </div>
